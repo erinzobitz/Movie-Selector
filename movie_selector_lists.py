@@ -14,7 +14,7 @@ played_movie_count = len(played_movie_list)
 def solicit_user_action():
     print('Action List')
     print('1.  Add \n2.  Pick My Own \n3.  Random Choice \n4.  Delete \n5.  View Movies \n6.  View Played \n7.  Exit\n')
-    user_selection = raw_input('What would you like to do? \n').lower()
+    user_selection = input('What would you like to do? \n').lower()
     print('\n')
 
     if (user_selection == 'add') or (user_selection == "1"):
@@ -43,7 +43,7 @@ def choose_random_movie(available_movie_list, available_movie_count, played_movi
 
 def user_pick_movie(available_movie_list, available_movie_count):
     print_available_movie_list()
-    user_selection_string = raw_input("What Movie would you like to watch? \n").title()
+    user_selection_string = input("What Movie would you like to watch? \n").title()
     if user_selection_string in available_movie_list:
         user_selection_index = available_movie_list.index(user_selection_string) #Note: This may get buggy if multiple elements have similar names & user doesn't enter full title
         user_selected_movie = available_movie_list[user_selection_index]
@@ -58,7 +58,7 @@ def user_pick_movie(available_movie_list, available_movie_count):
     
 def add_movie_to_available_movie_list(available_movie_list, available_movie_count):
     print("Ok - Let's add a Movie! \n")
-    new_movie_to_add = raw_input('Movie Name? ').title()
+    new_movie_to_add = input('Movie Name? ').title()
     available_movie_list.append(new_movie_to_add)
     available_movie_count +=1
     print_available_movie_list()
@@ -71,7 +71,7 @@ def print_available_movie_list():
 
 def delete_movie_from_available_movie_list():
     print_available_movie_list()
-    movie_to_delete = raw_input('What would you like to delete? \n').title()
+    movie_to_delete = input('What would you like to delete? \n').title()
     if movie_to_delete.title() in available_movie_list:
         available_movie_list.remove(movie_to_delete)
     elif movie_to_delete == "Menu":
@@ -82,7 +82,7 @@ def delete_movie_from_available_movie_list():
     print_available_movie_list()
 
 def add_movie_to_played_list():
-    played_movie_to_add = raw_input('Movie Name? ').title()
+    played_movie_to_add = input('Movie Name? ').title()
     played_movie_list.append(played_movie_to_add)
     print(played_movie_list, '\n')
 
