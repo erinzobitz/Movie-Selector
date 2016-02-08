@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 """This is a program for When you are bored & don't know what movie to watch"""
 
